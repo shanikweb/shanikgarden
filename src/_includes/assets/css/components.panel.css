@@ -1,0 +1,33 @@
+.panel--blocks {
+  background-color: var(--color-grey-light);
+}
+
+.panel-contents {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.thinking .panel--blocks .panel-contents section,
+.panel--profile .panel-contents section {
+  margin-bottom: 3.125rem;
+}
+
+.panel--blocks .panel-contents section {
+  margin-bottom: 1.25rem;
+}
+
+.panel:last-child {
+  display: none;
+}
+
+.home .panel--profile footer {
+  display: none;
+}
+
+.thinking {
+  background-color: var(--color-grey-light);
+}
+
+.panel--profile .prose > *:first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,26 @@
+.article--single {
+  margin-bottom: 10rem;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.article .prose > *,
+.panel--profile .panel-contents > * {
+  max-width: 34rem;
+}
+
+.writing .main,
+.post .main {
+  display: flex;
+  flex-direction: column;
+}
+
+.writing .main section,
+.post .main section {
+  flex-grow: 1;
+}
+
+.writing--section {
+  align-self: center;
+  margin-top: 5rem;
+}

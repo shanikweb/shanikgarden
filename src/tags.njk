@@ -1,0 +1,45 @@
+---
+section: writing
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - profile
+    - activityCurrent
+    - activityPast
+permalink: /writing/tag/{{ tag | slugify }}/
+---
+{% set title = 'Tag “' ~ tag ~ '”' %}
+<html class="{{ section }} {{ section }}--tag" lang="{{ global.lang }}">
+
+  {% include "components/head.njk" %}
+
+  <body>
+
+    {% include "components/header-writing.njk" %}
+
+    <main class="main">
+
+      <section>
+        {% for post in collections[tag] %}
+          {% include "components/single-post.njk" %}
+        {% endfor %}
+      </section>
+
+      <div class="pagination">
+        {% set arrowTop = global.arrowsTop.split(', ') | random %}
+        <a class="pagination__top" href="#top" aria-label="Back to top">{{ arrowTop }}</a>
+      </div>
+
+    </main>
+
+    {% include "components/footer.njk" %}
+
+  </body>
+
+</html>

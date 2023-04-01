@@ -1,0 +1,37 @@
+{# Get the profile content #}
+{% set profile = collections.profile.data %}
+
+{%- if profile.colleagues.length or profile.credits -%}
+  <footer class="footer footer--site">
+
+    {%- if profile.colleagues.length -%}
+      <section class="section section--footer prose">
+        <div class="subtle-links">
+
+          <h2>Friends and collaborators</h2>
+
+          <ul>
+            {% for person in profile.colleagues %}
+              <li>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    {%- endif -%}
+
+    {%- if profile.credits -%}
+      <section class="section section--footer prose">
+
+        <h2>Details</h2>
+
+        {{ profile.credits | markdownify | safe }}
+
+      </section>
+    {%- endif -%}
+
+    <button class="adjust-contrast js-contrast" onclick="toggleContrast();">
+      <span class="visually-hidden">Change contrast</span>
+    </button>
+
+  </footer>
+{%- endif -%}

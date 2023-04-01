@@ -1,0 +1,41 @@
+<div class="skip-buttons">
+  <p>
+    <a href="#main" class="button button--skip">Skip to main content</a>
+  </p>
+  <p>
+    <a href="#contrast" class="button button--skip">Skip to contrast setting</a>
+  </p>
+</div>
+
+<header class="header header--site" id="top">
+
+  {% set linkUrl = '/' %}
+  {% set linkText = global.siteTitle %}
+  {%- if page.url != '/' -%}
+    <span class="site-title">
+      {% include "components/nav-link.njk" %}
+    </span>
+    <h1 class="visually-hidden">{{ title }}</h1>
+  {%- else -%}
+    <h1 class="site-title">
+      {% set current = section == 'home' %}
+      {% include "components/nav-link.njk" %}
+    </h1>
+  {%- endif -%}
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item nav__item--thinking">
+        {% set linkUrl = '/thinking/' %}
+        {% set linkText = 'Thinking' %}
+        {% set current = section == 'thinking' %}
+        {% include "components/nav-link.njk" %}
+      </li>
+      <li class="nav__item nav__item--writing">
+        {% set linkUrl = '/writing/' %}
+        {% set linkText = 'Writing' %}
+        {% set current = section == 'writing' or section == 'post' %}
+        {% include "components/nav-link.njk" %}{% if tag %}<span class="color-grey"> &mdash; </span>{{ tag }}{% endif %}
+      </li>
+    </ul>
+  </nav>
+</header>

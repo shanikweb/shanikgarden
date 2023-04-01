@@ -1,0 +1,52 @@
+---
+section: writing
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+---
+<html class="{{ section }}" lang="{{ global.lang }}">
+
+  {% include "components/head.njk" %}
+
+  <body>
+
+    {% include "components/header-writing.njk" %}
+
+    <main id="main" class="main">
+
+      {# TODO add layout content? #}
+      
+      <section class="writing--section">
+        {% for post in posts %}
+          {% include "components/single-post.njk" %}
+        {% endfor %}
+      </section>
+
+      <div class="pagination">
+        {% if pagination.hrefs.length > 1 %}
+          <ol class="pagination__list">
+            {% for href in pagination.hrefs %}
+              <li>
+                {% if loop.index0 == pagination.pageNumber %}
+                  <span class="pagination__page" aria-label="Page {{ loop.index }}">{{ loop.index }}</span>
+                {% else %}
+                  <a class="pagination__page pagination__link" href="{{ href }}" aria-label="Page {{ loop.index }}">{{ loop.index }}</a>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ol>
+
+        {% endif %}
+
+        {% set arrowTop = global.arrowsTop.split(', ') | random %}
+        <a class="pagination__top" href="#top" aria-label="Back to top">{{ arrowTop }}</a>
+      </div>
+
+    </main>
+
+    {% include "components/footer.njk" %}
+
+  </body>
+
+</html>

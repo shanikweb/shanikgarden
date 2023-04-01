@@ -1,0 +1,14 @@
+{%- set singleUrl = post.url -%}
+{%- set singleTitle -%}
+  <time class="article__time" datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>{%- if post.data.displayTitle == true -%}&nbsp;—&nbsp;{{ post.data.title }}{%- endif -%}
+{%- endset -%}
+{%- set singleTags = post.data.tags -%}
+{%- set singleContent -%}
+  {% if post.data.page.excerpt %}
+    {{ post.data.page.excerpt | markdownify | safe }}
+    <a class="button button--more" href="{{ post.url | url }}">Read more</a>
+  {% else %}
+    {{ post.templateContent | safe }}
+  {% endif %}
+{%- endset -%}
+{% include "components/single.njk" %}

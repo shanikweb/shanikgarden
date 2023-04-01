@@ -1,0 +1,92 @@
+.greyscale {
+  --color-1: var(--color-black);
+  --color-2: var(--color-grey);
+}
+
+.greyscale a {
+  text-decoration-color: inherit;
+}
+
+.greyscale a:hover,
+.greyscale a:focus {
+  text-decoration: none;
+}
+
+.greyscale .nav__link--current:hover,
+.greyscale .nav__link--current:focus {
+  color: var(--color-grey-dark);
+}
+
+.greyscale .activity__time {
+  color: var(--color-black);
+}
+
+.greyscale .subtle-links a:hover {
+  text-decoration: underline;
+}
+
+.greyscale .pagination a:hover,
+.greyscale .pagination a:focus {
+  color: var(--color-grey-dark);
+}
+
+.greyscale .pagination__list a:hover,
+.greyscale .pagination__list a:focus {
+  color: var(--color-black);
+}
+
+.greyscale .footer--site {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.greyscale .footer--site h2 {
+  color: inherit;
+}
+
+.greyscale .footer--site a,
+.greyscale .footer--site a:hover,
+.greyscale .footer--site a:focus {
+  color: inherit;
+}
+
+.greyscale .footer--site a:focus {
+  border: 1px solid var(--color-white) !important;
+}
+
+.adjust-contrast {
+  border: 1px solid transparent;
+  margin: 0.25rem calc(var(--gutter) - 0.5rem);
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.adjust-contrast:focus {
+  border: 1px solid var(--color-1);
+}
+
+.greyscale .adjust-contrast:focus {
+  border: 1px solid var(--color-white);
+}
+
+.adjust-contrast:after {
+  color: var(--color-1);
+}
+
+.adjust-contrast:after,
+.greyscale .adjust-contrast:hover:after,
+.greyscale .adjust-contrast:focus:after {
+  content: "◐";
+}
+
+.greyscale .adjust-contrast:after {
+  color: var(--color-white);
+}
+
+.greyscale .adjust-contrast:after,
+.adjust-contrast:hover:after,
+.adjust-contrast:focus:after {
+  content: "◑";
+}

@@ -1,0 +1,27 @@
+<article class="article article--single">
+
+  <header class="header header--article">
+    <h1 class="subtle-links">
+      <a href="{{ singleUrl | url }}">
+        {{ singleTitle | safe }}
+      </a>
+    </h1>
+  </header>
+
+  <div class="prose">
+    {{ singleContent | safe }}
+  </div>
+
+  {% if singleTags %}
+    <footer class="footer">
+      <ul class="tags">
+        {% for tag in singleTags %}
+          {%- if tag != "post" -%}
+            {% set tagUrl %}/writing/tag/{{ tag | slugify }}/{% endset %}
+            <li class="tag"><a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a></li>
+          {%- endif -%}
+        {% endfor %}
+      </ul>
+    </footer>
+  {% endif %}
+</article>

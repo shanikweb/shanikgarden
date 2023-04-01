@@ -1,0 +1,133 @@
+@media screen and (min-width: 40em) {
+  :root {
+    --gutter: 1.25rem;
+  }
+
+  .thinking {
+    background-color: var(--color-white);
+  }
+
+  .header--desktop {
+    display: flex;
+  }
+
+  .header--site,
+  .header--site * {
+    /* Visually hide */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .header--panel {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .panel:last-child {
+    display: block;
+  }
+
+  .home,
+  .home body,
+  .home main,
+  .thinking,
+  .thinking body,
+  .thinking main {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .home body > footer,
+  .thinking body > footer {
+    /* Visually hide */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .home .panel--profile footer {
+    display: block;
+  }
+
+  .panel--profile .section--footer {
+    width: 100%;
+  }
+
+  .home main,
+  .thinking main {
+    display: flex;
+  }
+
+  .panel {
+    width: 50%;
+  }
+
+  .panel--profile,
+  .panel--blocks {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .thinking .panel--blocks .panel-contents section {
+    margin-bottom: 1.25rem;
+  }
+
+  .activity {
+    align-items: baseline;
+    display: flex;
+  }
+
+  .activity__time {
+    min-width: 5.125rem;
+  }
+
+  body > footer {
+    display: flex;
+  }
+
+  body footer section {
+    width: 50%;
+  }
+
+  .pagination__simple {
+    justify-content: space-between;
+  }
+
+  .is-tabbing .has-panels .header--site {
+    left: 0;
+    position: sticky !important;
+    right: 0;
+    top: 0;
+  }
+
+  .is-tabbing .panel--blocks {
+    background-color: var(--color-white);
+  }
+
+  .is-tabbing .block__link {
+    border: 1px solid var(--color-grey);
+  }
+
+  .is-tabbing .block__link:hover,
+  .is-tabbing .block__link:focus {
+    border: 1px solid var(--color-1);
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .home .panel--profile footer,
+  .thinking .panel--profile footer {
+    display: flex;
+  }
+}
